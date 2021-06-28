@@ -1,0 +1,57 @@
+const tree = {
+  val: 'a',
+  children:[
+    {
+      val: 'b',
+      children:[
+        {
+          val: 'd',
+          children:[{
+            val: 'haha',
+            children:[]
+          },]
+        },
+        {
+          val: 'e',
+          children:[]
+        }
+      ]
+    },
+    {
+      val: 'c',
+      children:[
+        {
+          val: 'f',
+          children:[]
+        },
+        {
+          val: 'g',
+          children:[]
+        }
+      ]
+    }
+  ]
+}
+
+// 深度优先遍历
+const dfs = (root)=>{
+  console.log(root.val)
+  root.children.forEach(dfs)
+}
+
+// dfs(tree)
+
+// 广度优先遍历
+const bfs = (root)=>{
+  const q = [root];
+  while(q.length>0){
+    console.log('q:',q.length)
+    const n = q.shift()
+    console.log(n.val)
+    n.children.forEach(v=>{
+      q.push(v)
+    })
+  }
+}
+
+bfs(tree)
