@@ -45,7 +45,6 @@ const dfs = (root)=>{
 const bfs = (root)=>{
   const q = [root];
   while(q.length>0){
-    console.log('q:',q.length)
     const n = q.shift()
     console.log(n.val)
     n.children.forEach(v=>{
@@ -54,4 +53,4 @@ const bfs = (root)=>{
   }
 }
 
-bfs(tree)
+// bfs(tree)
