@@ -9,21 +9,18 @@
 /**
  * @param {TreeNode} root
  * @return {number}
- *
  */
-// 时间复杂度  On
-// 空间复杂度  O log(n) On
 
- var maxDepth = function(root) {
-  let res = 0
-  const dfs =(n,l)=>{
-      if(!n) {return;}
-      if(!n.left && !n.right){
-      res = Math.max(res,l);
-      }
-      dfs(n.left,l+1);
-      dfs(n.right,l+1);
+// 时间复杂度  On
+// 空间复杂度  On
+
+ var minDepth = function(root) {
+  if(!root) return 0;
+  const q = [[root,1]];
+  while(q.length){
+      const [n,l] = q.shift();
+      if(!n.left && !n.right) return l
+      if(n.left) q.push([n.left,l+1]);
+      if(n.right) q.push([n.right,l+1]);
   }
-  dfs(root,1)
-  return res
 };

@@ -53,4 +53,4 @@ const bfs = (root)=>{
   }
 }
 
-// bfs(tree)
+bfs(tree)
