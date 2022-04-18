@@ -7,3 +7,6 @@ const instanceof1 = (A,B) => {
     }
     return false
 }
+
+
+
